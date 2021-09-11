@@ -1,4 +1,5 @@
 //import React, {  useEffect, useState  } from "react";
+import PropTypes from "prop-types";
 import s from "./ContactForm.module.css";
 import useLocalStorage from "../../utils/UseLocalStorage";
 
@@ -65,5 +66,10 @@ function ContactForm({ onSubmit }) {
     </form>
   );
 }
+
+ContactForm.propTypes = {
+  stateName: PropTypes.string,
+  number: PropTypes.string,
+};
 
 export default ContactForm;

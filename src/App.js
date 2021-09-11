@@ -1,5 +1,6 @@
 //import { useState } from "react";
 import shortid from "shortid";
+import PropTypes from "prop-types";
 import "./App.css";
 import ContactForm from "./components/ContactForm/ContactForm";
 import ContactList from "./components/ContactList/ContactList";
@@ -67,5 +68,14 @@ function App() {
     </section>
   );
 }
+
+App.propTypes = {
+  contacts: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+    })
+  ),
+  filter: PropTypes.string,
+};
 
 export default App;
